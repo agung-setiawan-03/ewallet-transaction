@@ -12,7 +12,6 @@ import (
 )
 
 type External struct {
-
 }
 
 func (*External) ValidateToken(ctx context.Context, token string) (models.TokenData, error) {
