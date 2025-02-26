@@ -29,7 +29,7 @@ func (*Transaction) TableName() string {
 }
 
 type CreateTransactionResponse struct {
-	Refrence          string `json:"reference"`
+	Reference          string `json:"reference"`
 	TransactionStatus string `json:"transaction_status"`
 }
 
@@ -40,6 +40,16 @@ type UpdateStatusTransaction struct {
 }
 
 func (l UpdateStatusTransaction) Validate() error {
+	v := validator.New()
+	return v.Struct(l)
+}
+type RefundTransaction struct {
+	Reference      string `json:"reference" valid:"required"`
+	Description    string `json:"description" valid:"required"`
+	AdditionalInfo string `json:"additional_info"`
+}
+
+func (l RefundTransaction) Validate() error {
 	v := validator.New()
 	return v.Struct(l)
 }

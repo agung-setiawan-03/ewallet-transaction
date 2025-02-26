@@ -30,7 +30,7 @@ var MapTransactionType = map[string]bool{
 // PENDING -> SUCCESS
 // PENDING -> FAILED
 
-// SUCCESS -> REVERSED
+// SUCCESS -> REVERSED 
 
 var MapTransactionStatusFlow = map[string][]string{
 	TransactionStatusPending: {TransactionStatusSuccess, TransactionStatusFailed},
