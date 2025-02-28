@@ -13,7 +13,7 @@ func main() {
 	// load log
 	helpers.SetupLogger()
 
-
+	
 	// load database 
 	helpers.SetupMySQL()
 
